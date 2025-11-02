@@ -1,13 +1,11 @@
-import './app.css';
+import { mount } from 'svelte';
 import App from './App.svelte';
+import './styles/global.css';
 
-const target = document.getElementById('app');
-if (!target) {
-  throw new Error('App mount target element with id="app" not found');
-}
-
-const app = new App({
-  target,
+const app = mount(App, {
+  target: document.getElementById('app') ?? document.body,
+  props: {
+  },
 });
 
 export default app;

@@ -1,12 +1,10 @@
 <script lang="ts">
+/// <reference types="svelte" />
 import Button from './components/Button.svelte';
 </script>
 
-<main>
-  
-  <div class="card">
-    <Button>click me</Button>
-  </div>
 
-</main>
+  <div class="card">
+    <Button variant="secondary">click me</Button>
+  </div>
 
