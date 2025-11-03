@@ -2,10 +2,9 @@ import { mount } from 'svelte';
 import App from './App.svelte';
 import './styles/global.css';
 
-const app = mount(App, {
+mount(App, {
   target: document.getElementById('app') ?? document.body,
   props: {
+    globalClass: 'app-container'
   },
 });
-
-export default app;

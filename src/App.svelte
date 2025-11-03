@@ -1,10 +1,22 @@
 <script lang="ts">
-/// <reference types="svelte" />
-import Button from './components/Button.svelte';
+  import Button from './components/Button.svelte';
+  import { theme } from './stores/theme';
+
+  export let globalClass: string = 'app-container';
+
+
+function toggleTheme() {
+
+  theme.update(t => {
+    const next = t === 'dark' ? 'light' : 'dark';
+    return next;
+  });
+}
+
 </script>
 
-
-  <div class="card">
-    <Button variant="secondary">click me</Button>
-  </div>
-
+<div class={globalClass} data-theme={$theme}>
+  <Button variant="primary" on:click={toggleTheme}>
+    Toggle Theme
+  </Button>
+</div>

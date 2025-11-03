@@ -2,7 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/*-----------------------------------
+  Basic layout & helpers
+-----------------------------------*/
 
-/* small helpers */
-html, body, #app { height: 100%; }
-body { @apply bg-gray-50 text-gray-800 antialiased; }
+/* Make full viewport height for html, body, and #app */
+html, body, #app {
+  height: 100%;
+}
+
+/* Base body styling */
+body {
+  @apply text-gray-800 antialiased; /* remove bg color */
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* Smooth transitions for background and text colors */
+html, body, #app, [data-theme] {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*-----------------------------------
+  Theme support
+-----------------------------------*/
+
+/* Light theme on <html> */
+html[data-theme='light'] {
+  background-color: #ffffff;
+  color: #080718;
+}
+
+/* Dark theme on <html> */
+html[data-theme='dark'] {
+  background-color: #080718;
+  color: #f9f9f9;
+}
+
+/*-----------------------------------
+  Centering & container
+-----------------------------------*/
+
+/* #app is the root element — flex to center content */
+#app {
+  @apply flex items-center justify-center min-h-screen;
+}
+
+/* App container: centered, responsive max width */
+.app-container {
+  @apply w-full max-w-4xl mx-auto px-4;
+}
+
+/* Optional card example */
+.card {
+  @apply p-6 rounded-lg shadow-md transition-colors;
+  /* use bg color from theme, do not force dark/bg */
+  background-color: inherit;
+  color: inherit;
+}
