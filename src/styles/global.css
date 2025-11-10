@@ -10,6 +10,18 @@
 /* ---------- Base (hue foundations & tuneables) ---------- */
 /* ---------- Primary & Secondary: RGB-backed tonal scales ---------- */
 :root {
+  /* ---------- Neutral scale (gray / neutral) ---------- */
+  /* Use these for surfaces, borders, text-muted, forced light theme vars etc. */
+  --n-50:  hsl(210 20% 98%);
+  --n-100: hsl(210 20% 96%);
+  --n-200: hsl(210 20% 92%);
+  --n-300: hsl(210 20% 88%);
+  --n-400: hsl(210 16% 78%);
+  --n-500: hsl(210 14% 66%);
+  --n-600: hsl(210 12% 54%);
+  --n-700: hsl(210 12% 40%);
+  --n-800: hsl(210 12% 26%);
+  --n-900: hsl(210 12% 12%);
   /* ---------- Primary tonal scale (cool blue-teal) ---------- */
   --p-50:  hsl(195 85% 96%);
   --p-100: hsl(195 85% 88%);
@@ -97,10 +109,10 @@
   --surface-3: hsl(220 12% 16%);
   --text: hsl(210 14% 94%);
   --muted: hsl(210 12% 72%);
-  --border: rgba(255,255,255,0.06);
+  --border: rgb(172, 163, 163);
 
   --primary: var(--p-300);
-  --primary-contrast: hsl(210 14% 8%);
+  --primary-contrast: hsl(216, 12%, 8%);
   --primary-hover: var(--p-200);
   --primary-active: var(--p-100);
 
@@ -116,7 +128,6 @@
   --focus: 0 0 0 4px color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
-/* explicit light theme (if you want to force it) */
 :root[data-theme="light"] {
   --surface-0: var(--n-50);
   --surface-1: var(--n-100);
@@ -124,7 +135,7 @@
   --surface-3: var(--n-300);
   --text: var(--n-900);
   --muted: var(--n-600);
-  --border: var(--n-300);
+  --border: var(--n-400);
 
   --primary: var(--p-500);
   --primary-contrast: hsl(0 0% 100%);
@@ -186,16 +197,6 @@ body {
   transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-/* Surface */
-.surface {
-  background: var(--panel);
-  color: var(--text-strong);
-  border: 1px solid var(--muted-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  padding: 1rem;
-}
-
 
 /* Links */
 a, .link {
@@ -233,21 +234,6 @@ a:hover, .link:hover { color: var(--accent-primary-hover); text-decoration: unde
 .round-md { border-radius: var(--radius-md); }
 .p-1 { padding: .5rem; }
 .m-1 { margin: .5rem; }
-
-/* Demo palette helpers (useful in docs / palette pages) */
-.palette-swatch {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  color: var(--text-strong);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  border:1px solid var(--muted-border);
-}
-
 /* ---------- Quick usage notes ----------
   - Switch programmatically:
       document.documentElement.dataset.theme = 'dark'

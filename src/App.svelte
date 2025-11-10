@@ -21,6 +21,7 @@ function toggleTheme() {
 </script>
 
 <div class={globalClass} data-theme={$theme}>
+<div class="space-y-6">
   <Button variant="primary" size="md" on:click={toggleTheme}>
     {#if $theme === 'dark'}
       Dark Mode
@@ -50,6 +51,6 @@ function toggleTheme() {
     <CardFooter>footer</CardFooter>
   </Card>
 
-
+</div>
 
 </div>

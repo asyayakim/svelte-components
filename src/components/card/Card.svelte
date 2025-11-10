@@ -17,6 +17,7 @@
   class:shadow-sm={elev === 'sm'}
   class:shadow={elev === 'md'}
   class:shadow-lg={elev === 'lg'}
+  class:bg-surface-1={!compact}
 >
   <slot name="header">
     {#if title}
