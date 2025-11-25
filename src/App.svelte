@@ -6,6 +6,8 @@
   import CardBody from './components/card/CardBody.svelte';
   import CardFooter from './components/card/CardFooter.svelte';
   import { theme } from './stores/theme';
+  import Container from './components/container/Container.svelte';
+    import Badge from './components/badge/Badge.svelte';
 
   export let globalClass: string = 'app-container';
 
@@ -21,7 +23,7 @@ function toggleTheme() {
 </script>
 
 <div class={globalClass} data-theme={$theme}>
-<div class="space-y-6">
+  <Container>
   <Button variant="primary" size="md" on:click={toggleTheme}>
     {#if $theme === 'dark'}
       Dark Mode
@@ -40,8 +42,8 @@ function toggleTheme() {
 <Card title="Sample Card" subtitle="This is a subtitle" elev="md" bordered={true} compact={false} ariaLabel="Sample Card">
      <CardImage src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg" alt="landscape" size="thumb" />
 
-    <CardHeader title="Project Aurora" subtitle="Design system" badge="Badge" />
-
+    <CardHeader title="Project Aurora" subtitle="Design system"  />
+    <Badge label="New" variant="primary" size="sm" rounded="md" className="mb-2" />
     <CardBody>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -51,6 +53,6 @@ function toggleTheme() {
     <CardFooter>footer</CardFooter>
   </Card>
 
-</div>
+  </Container>
 
 </div>
