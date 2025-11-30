@@ -1,6 +1,7 @@
 <script lang="ts">
   import type {HTMLAttributes} from 'svelte/elements';
   import type {WithElementRef} from 'bits-ui';
+import {cn} from '../../utils/classnames';
 
 let {
   class: classname,
@@ -10,7 +11,7 @@ let {
 </script>
 
 <article
-  class={`card ${classname ?? ''}`}
+  class={cn('card', classname)}
   {...restProps}
 >
   {@render children?.()}

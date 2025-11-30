@@ -23,5 +23,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "bits-ui": "^2.14.4",
+    "tailwind-variants": "^3.2.2"
   }
 }
