@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Button from './components/Button.svelte';
-  import Card from './components/card/Card.svelte';
-  import CardImage from './components/card/CardImage.svelte';
-  import CardHeader from './components/card/CardHeader.svelte';
-  import CardBody from './components/card/CardBody.svelte';
-  import CardFooter from './components/card/CardFooter.svelte';
+  import { Button } from './components/button';
+  import CardImage from './components/card/card-image.svelte';
+  import CardHeader from './components/card/card-header.svelte';
+  import CardBody from './components/card/card-body.svelte';
+  import CardFooter from './components/card/card-footer.svelte';
   import { theme } from './stores/theme';
-  import Container from './components/container/Container.svelte';
-    import Badge from './components/badge/Badge.svelte';
+  import { Container } from './components/container';
+    import { Card } from './components/card';
+  import { Badge } from './components/badge';
 
   export let globalClass: string = 'app-container';
 
@@ -38,21 +38,17 @@ function toggleTheme() {
       tertiary
     </Button>
     
-    
-<Card title="Sample Card" subtitle="This is a subtitle" elev="md" bordered={true} compact={false} ariaLabel="Sample Card">
-     <CardImage src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg" alt="landscape" size="thumb" />
-
-    <CardHeader title="Project Aurora" subtitle="Design system"  />
-    <Badge label="New" variant="primary" size="sm" rounded="md" className="mb-2" />
-    <CardBody>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </CardBody>
-
-    <CardFooter>footer</CardFooter>
-  </Card>
-
+    <Card class="my-6">
+      <CardImage src="https://via.placeholder.com/150" alt="Placeholder Image" size="thumb" />
+      <CardHeader class="font-bold text-lg">Card Title</CardHeader>
+      <CardBody>
+        <p>This is the body of the card. It can contain text, images, or other components.</p>
+        <Badge variant="primary">New</Badge>
+      </CardBody>
+      <CardFooter>
+        <p>Footer content goes here.</p>
+      </CardFooter>
+    </Card>
   </Container>
 
 </div>
