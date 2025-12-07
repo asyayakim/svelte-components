@@ -24,17 +24,17 @@ function toggleTheme() {
 
 <div class={globalClass} data-theme={$theme}>
   <Container>
-  <Button variant="primary" size="md" on:click={toggleTheme}>
+  <Button variant="primary" size="default" onclick={toggleTheme}>
     {#if $theme === 'dark'}
       Dark Mode
     {:else}
       Light Mode
     {/if}
   </Button>
-   <Button variant="secondary" size="md" on:click={() => console.log('primary clicked')}>
+   <Button variant="secondary" size="md" onclick={() => console.log('primary clicked')}>
       Secondary
     </Button>
-   <Button variant="tertiary" size="md" on:click={() => console.log('primary clicked')}>
+   <Button variant="tertiary" size="md" onclick={() => console.log('primary clicked')}>
       tertiary
     </Button>
     
