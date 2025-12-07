@@ -8,6 +8,7 @@
   import { Container } from './components/container';
     import { Card } from './components/card';
   import { Badge } from './components/badge';
+    import Input from './components/input/input.svelte';
 
   export let globalClass: string = 'app-container';
 
@@ -49,6 +50,9 @@ function toggleTheme() {
         <p>Footer content goes here.</p>
       </CardFooter>
     </Card>
+    <Input type="text" placeholder="Enter your name" class="my-4" />
   </Container>
+
+
 
 </div>
